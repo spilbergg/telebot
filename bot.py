@@ -58,7 +58,7 @@ def get_user_text(message):
         if 10 < text < 150:
             result = text * 7
             bot.send_message(message.chat.id,
-                             f'Общаяя стоимость  <b>{round(result)}$</b> ',
+                             f'Общаяя стоимость  <b>{math.ceil(result)}$</b> ',
                              parse_mode='html')
         elif text > 150:
             result = text * 6
@@ -72,6 +72,9 @@ def get_user_text(message):
 
 
 bot.polling(none_stop=True, interval=0)
+
+
+
 
 # if isinstance(text, float):
 #     # bot.send_message(message.chat.id, message, parse_mode='html')
